@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontend Mentor | Todo app</title>
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="banner"></div>
+		</header>
+		<main class="todo">
+			<header class="todo__header || pb-2">
+				<h1 class="header__heading | primary-heading">TODO</h1>
+				<button class="header__button">
+					<img
+						class="button__icon-moon"
+						src="./images/icon-moon.svg"
+						alt="dark mode icon"
+						aria-hidden="false"
+					/>
+					<img
+						class="button__icon-sun"
+						src="./images/icon-sun.svg"
+						alt="light mode icon"
+						aria-hidden="true"
+					/>
+				</button>
+			</header>
+			<section class="todo__input">
+				<span class="circle"></span>
+				<input
+					type="text"
+					id="input__field"
+					name="input__field"
+					placeholder="Create a new todo..."
+				/>
+			</section>
+			<section class="todo__display">
+				<ul class="todo__tasks"></ul>
+				<div class="todo__info">
+					<div>
+						<p class="info__count">0 items left</p>
+					</div>
+					<div>
+						<section class="info__toolbar">
+							<button
+								class="toolbar__switch toolbar__switch--active"
+							>
+								All
+							</button>
+							<button class="toolbar__switch">Active</button>
+							<button class="toolbar__switch">Completed</button>
+						</section>
+					</div>
+					<div>
+						<button class="info__clear">Clear Completed</button>
+					</div>
+				</div>
+			</section>
+			<section class="todo__reminder">
+				<p>Drag and drop to reorder list</p>
+			</section>
+		</main>
+		<script type="module" src="./main.js"></script>
+	</body>
+</html>

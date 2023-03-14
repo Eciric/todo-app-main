@@ -1,0 +1,233 @@
+@import "./reset.css";
+@import "./variables.css";
+@import "./utilities.css";
+
+body {
+	position: relative;
+	font-family: var(--ff);
+	background-color: var(--clr-dynamic-bg);
+}
+
+.banner {
+	width: 100%;
+}
+
+@media (min-width: 23.438em) {
+	.banner {
+		background: url("../images/bg-desktop-light.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 300px;
+	}
+}
+
+@media (max-width: 23.437em) {
+	.banner {
+		background: url("../images/bg-mobile-light.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 200px;
+	}
+}
+
+.todo {
+	--todo-width: min(550px, 85vw);
+	position: absolute;
+	inset: 0;
+	top: 9vh;
+	top: 9dvh;
+	margin-inline: auto;
+	width: var(--todo-width);
+	aspect-ratio: 1;
+}
+
+@media (max-width: 450px) {
+	.todo {
+		min-height: 500px;
+	}
+}
+
+.todo__header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.todo__input {
+	display: flex;
+	gap: var(--size-200);
+	align-items: center;
+	padding: 0 var(--size-500);
+	width: 100%;
+	border-radius: 10px;
+	background-color: var(--clr-dynamic-tasks-bg);
+	margin-bottom: var(--size-500);
+}
+
+.task__button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.circle {
+	height: 25px;
+	width: 25px;
+	background-color: var(--clr-dynamic-tasks-bg);
+	border: var(--clr-dynamic-paragraph-2) solid 1px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.circle:hover,
+.circle:focus {
+	background: linear-gradient(
+				var(--clr-dynamic-tasks-bg),
+				var(--clr-dynamic-tasks-bg)
+			)
+			padding-box,
+		var(--clr-primary-background-gradient) border-box;
+	border-radius: 50em;
+	border: 4px solid transparent;
+	border-width: 1px;
+	border-style: solid;
+}
+
+input {
+	font-size: var(--fs-550);
+	color: var(--clr-dynamic-paragraph-1);
+	border: none;
+	border-radius: 10px;
+	background: transparent;
+	width: 100%;
+	padding: var(--size-400) var(--size-300);
+}
+
+input:focus {
+	outline: none;
+}
+
+.todo__display {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 90%;
+	width: 100%;
+	background-color: var(--clr-dynamic-tasks-bg);
+	border-radius: 10px;
+	margin-bottom: var(--size-500);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo__tasks {
+	height: 100%;
+	overflow-y: auto;
+}
+
+.task {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: var(--size-500);
+	padding: var(--size-400);
+	cursor: pointer;
+}
+
+.task[task--completed] > .task__title {
+	text-decoration: line-through;
+	color: var(--clr-dynamic-paragraph-2);
+}
+
+.task[task--completed] > button > span.circle {
+	background: url(../images/icon-check.svg),
+		var(--clr-primary-background-gradient);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.task__remove {
+	display: none;
+}
+
+.task__title {
+	color: var(--clr-dynamic-paragraph-1);
+}
+
+.task:hover .task__button.task__remove {
+	display: block;
+}
+
+.task > button:last-child {
+	margin-left: auto;
+}
+
+.empty {
+	height: 100%;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.empty__task {
+	font-size: var(--fs-500);
+	color: var(--clr-dynamic-paragraph-1);
+}
+
+.todo__info {
+	margin-top: auto;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	border-top: solid 1px var(--clr-dynamic-paragraph-2);
+	font-weight: var(--fw-regular);
+	padding: var(--size-400);
+	color: var(--clr-dynamic-paragraph-2);
+	font-size: var(--fs-400);
+}
+
+.toolbar__switch,
+.info__clear {
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-weight: var(--fw-regular);
+	color: var(--clr-dynamic-paragraph-2);
+}
+
+.info__toolbar {
+	display: flex;
+	gap: var(--size-300);
+	font-weight: var(--fw-bold);
+}
+
+.toolbar__switch--active {
+	color: var(--clr-primary-bright-blue);
+}
+
+.todo__reminder {
+	width: 100%;
+	padding: var(--size-900) 0;
+	color: var(--clr-dynamic-paragraph-2);
+	text-align: center;
+}
+
+@media (max-width: 450px) {
+	.info__toolbar {
+		position: absolute;
+		bottom: -12%;
+		left: 0;
+		justify-content: center;
+		padding: var(--size-200);
+
+		width: 100%;
+		border-radius: 10px;
+		background-color: var(--clr-dynamic-tasks-bg);
+	}
+}
