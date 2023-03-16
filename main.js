@@ -1,5 +1,6 @@
 import Sortable from "sortablejs";
 
+import iconCross from "./images/icon-cross.svg";
 const headerButton = document.querySelector(".header__button");
 const iconMoon = document.querySelector(".button__icon-moon");
 const iconSun = document.querySelector(".button__icon-sun");
@@ -96,7 +97,7 @@ function displayTasks() {
 					task__id="${task.id}"
 				>
 					<img
-						src="./images/icon-cross.svg"
+						src=${iconCross}
 						alt="remove task"
 					/>
 				</button>
