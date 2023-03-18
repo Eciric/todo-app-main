@@ -42,15 +42,17 @@
 					/>
 				</button>
 			</header>
-			<section class="todo__input">
-				<span class="circle"></span>
-				<input
-					type="text"
-					id="input__field"
-					name="input__field"
-					placeholder="Create a new todo..."
-				/>
-			</section>
+			<form onsubmit="return false;">
+				<section class="todo__input">
+					<span class="circle"></span>
+					<input
+						type="text"
+						id="input__field"
+						name="input__field"
+						placeholder="Create a new todo..."
+					/>
+				</section>
+			</form>
 			<section class="todo__display">
 				<ul class="todo__tasks"></ul>
 				<div class="todo__info">

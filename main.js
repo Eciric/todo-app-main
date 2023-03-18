@@ -1,6 +1,10 @@
 import Sortable from "sortablejs";
 
 import iconCross from "./images/icon-cross.svg";
+import bannerDesktopDark from "./images/bg-desktop-dark.jpg";
+import bannerMobileDark from "./images/bg-mobile-dark.jpg";
+import bannerDesktopLight from "./images/bg-desktop-light.jpg";
+import bannerMobileLight from "./images/bg-mobile-light.jpg";
 const headerButton = document.querySelector(".header__button");
 const iconMoon = document.querySelector(".button__icon-moon");
 const iconSun = document.querySelector(".button__icon-sun");
@@ -10,6 +14,7 @@ const toolbarSwitches = document.querySelectorAll(".toolbar__switch");
 const infoCount = document.querySelector(".info__count");
 const infoClear = document.querySelector(".info__clear");
 const root = document.querySelector(":root");
+const banner = document.querySelector(".banner");
 
 let tasks = [];
 const tasksTypes = { all: "All", active: "Active", completed: "Completed" };
@@ -21,6 +26,7 @@ const sortable = new Sortable(todoTasks, {
 });
 
 onload = () => {
+	banner.setAttribute("theme", "light");
 	switchThemes();
 	addTaskOnEnter();
 	assignActiveToolbarSwitchListeners();
@@ -178,6 +184,7 @@ function assignClearCompletedListener() {
 
 function activateLightTheme() {
 	let rootCS = getComputedStyle(root);
+	banner.setAttribute("theme", "light");
 	root.style.setProperty(
 		"--clr-dynamic-bg",
 		rootCS.getPropertyValue("-clr-light-theme-light-grayish-blue")
@@ -206,6 +213,8 @@ function activateLightTheme() {
 
 function activateDarkTheme() {
 	let rootCS = getComputedStyle(root);
+
+	banner.setAttribute("theme", "dark");
 	root.style.setProperty(
 		"--clr-dynamic-bg",
 		rootCS.getPropertyValue("--clr-dark-theme-very-dark-blue")

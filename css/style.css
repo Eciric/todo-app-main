@@ -14,19 +14,37 @@ body {
 
 @media (min-width: 23.438em) {
 	.banner {
+		height: 300px;
+	}
+
+	.banner[theme="dark"] {
+		background: url("../images/bg-desktop-dark.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.banner[theme="light"] {
 		background: url("../images/bg-desktop-light.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
-		height: 300px;
 	}
 }
 
 @media (max-width: 23.437em) {
 	.banner {
+		height: 200px;
+	}
+
+	.banner[theme="dark"] {
+		background: url("../images/bg-mobile-dark.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.banner[theme="light"] {
 		background: url("../images/bg-mobile-light.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
-		height: 200px;
 	}
 }
 
